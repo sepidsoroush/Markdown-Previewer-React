@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { marked } from "marked";
+import DOMPurify from 'dompurify';
 import {ArrowsMaximize , ArrowsDiagonalMinimize2} from "tabler-icons-react";
 import './App.css';
 
@@ -9,9 +10,9 @@ function App() {
 
   function UpdateMarkdown(e){
 
-    markdown = marked(e.target.value , { sanitize: true });
+    markdown = (marked(e.target.value));
     console.log(markdown);
-    setMark( markdown );
+    setMark( DOMPurify.sanitize(markdown) );
   }
   return (
     <div className="App">
@@ -27,9 +28,7 @@ function App() {
           <span>Previewer</span>
           <ArrowsDiagonalMinimize2 />
         </div>
-        <div id="preview">
-          {mark}
-          {markdown}
+        <div id="preview" dangerouslySetInnerHTML={{__html:mark}}>
         </div>
       </div>
 

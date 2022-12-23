@@ -15,7 +15,7 @@
 .wrapper{
   border: 2px solid #dcdbdb;
   width: 45vw;
-  height: 95vh;
+  min-height: 95vh;
   margin:20px auto;
   background-color: #ffffff;
   border-radius: 4px;
@@ -34,7 +34,7 @@
 }
 #editor{
   width: 100%;
-  height: calc(95vh - 44px);
+  min-height: calc(95vh - 44px);
   border: 0;
   padding: 10px;
   font-family: 'Source Code Pro', monospace;
