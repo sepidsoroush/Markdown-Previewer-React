@@ -1,9 +1,5 @@
 import './App.css';
 import { marked } from "marked";
-import Badge from "react-bootstrap/Badge";
-
-
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {ArrowsMaximize , ArrowsDiagonalMinimize2} from "tabler-icons-react";
 
 function App() {
