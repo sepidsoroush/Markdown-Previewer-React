@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+:root{
+  --code-color : #0e7e7e;
+}
 *{
   margin: 0;
   padding: 0;
@@ -44,4 +46,55 @@
   padding: 10px;
   line-height: 1.5;
 }
+#preview blockquote {
+  border-left: 3px solid var(--code-color);
+  color: var(--code-color);
+  padding-left: 5px;
+  margin-left: 25px;
+}
+#preview > p > code {
+  padding: 3px;
+}
 
+#preview code {
+  background: #dcdbdb;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+#preview pre {
+  display: block;
+  overflow: auto;
+  background: #dcdbdb;
+  padding: 5px;
+  line-height: 1.2;
+}
+#preview h1 {
+  border-bottom: 2px solid var(--code-color);
+}
+#preview h2 {
+  border-bottom: 1px solid var(--code-color);
+}
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 2px solid var(--code-color);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+#preview ul{
+  padding-left: 20px
+}
+
+#preview > ul > li {
+  padding-left: 20px
+}
+#preview > ol  {
+  padding-left: 20px
+}
