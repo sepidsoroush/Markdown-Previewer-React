@@ -1,5 +1,6 @@
 import './App.css';
-import Markdown from "marked-react";
+import { marked } from "marked";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {ArrowsMaximize , ArrowsDiagonalMinimize2} from "tabler-icons-react";
 
 function App() {
