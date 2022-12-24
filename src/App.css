@@ -34,6 +34,14 @@
   padding: 10px;
   height: 40px;
 }
+button{
+  border : 0;
+  background-color: #d4d4d4;
+
+}
+button:hover{
+  color :  var(--code-color);
+}
 #editor{
   width: 100%;
   min-height: calc(95vh - 44px);
