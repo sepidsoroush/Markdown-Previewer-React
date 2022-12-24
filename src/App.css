@@ -52,7 +52,7 @@ button:hover{
 #preview{
   font-family: 'Roboto', sans-serif;
   padding: 10px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 #preview blockquote {
   border-left: 3px solid var(--code-color);
