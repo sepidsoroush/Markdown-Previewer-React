@@ -3,6 +3,7 @@ import { marked } from "marked";
 import DOMPurify from 'dompurify';
 import {ArrowsMaximize , ArrowsDiagonalMinimize2} from "tabler-icons-react";
 import './App.css';
+import "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
 
 function App() {
   let markdown;
