@@ -14,31 +14,35 @@ function App() {
     console.log(markdown);
     setMark( DOMPurify.sanitize(markdown) );
   }
-  const [visible, setVisible] = useState(true);
-  const [width , setWidth] = useState("45vw");
-  let newWidth = (visible ? "90vw" : "45vw");
 
-
+  const [visibleEdit, setvisibleEdit] = useState(true);
+  const [widthEdit , setWidthEdit] = useState("45vw");
+  let newWidthEdit = (visibleEdit ? "90vw" : "45vw");
   function editorMaximizer(){
-    // setWidth("90vh");
-    setVisible(!visible);
-    setWidth(newWidth);
-    
+    setvisibleEdit(!visibleEdit);
+    setWidthEdit(newWidthEdit);
   }
 
+  const [visibleView, setvisibleView] = useState(true);
+  const [widthView , setWidthView] = useState("45vw");
+  let newWidthView = (visibleView ? "90vw" : "45vw");
+  function previewMaximizer(){
+    setvisibleView(!visibleView);
+    setWidthView(newWidthView);
+  }
   return (
     <div className="App">
-      <div className="editor-wrapper wrapper" style={{width : width}}>
+      {visibleView && <div className="editor-wrapper wrapper" style={{width : widthEdit}}>
         <div className="editor-toolbar toolbar">
           <span>Editor</span>
-          <button onClick={editorMaximizer}> {visible ? <ArrowsMaximize/> : <ArrowsDiagonalMinimize2/> } </button>
+          <button onClick={editorMaximizer}> {visibleEdit ? <ArrowsMaximize/> : <ArrowsDiagonalMinimize2/> } </button>
         </div>
         <textarea name="editor" id="editor" cols="30" rows="10" onChange={UpdateMarkdown}  ></textarea>
-      </div>
-      { visible && <div className="preview-wrapper wrapper" > 
+      </div>}
+      { visibleEdit && <div className="preview-wrapper wrapper" style={{width : widthView}} > 
         <div className="preview-toolbar toolbar">
           <span>Previewer</span>
-          <ArrowsDiagonalMinimize2 />
+          <button onClick={previewMaximizer} > {visibleView ? <ArrowsMaximize/> : <ArrowsDiagonalMinimize2/> }</button>
         </div>
         <div id="preview" dangerouslySetInnerHTML={{__html:mark}}>
         </div>
