@@ -14,23 +14,30 @@ function App() {
     console.log(markdown);
     setMark( DOMPurify.sanitize(markdown) );
   }
+  const [visible, setVisible] = useState(false);
+  function editorMaximizer(){
+    // setWidth("90vh");
+    setVisible(!visible);
+
+  }
+
   return (
     <div className="App">
-      <div className="editor-wrapper wrapper">
+      <div className="editor-wrapper wrapper" >
         <div className="editor-toolbar toolbar">
           <span>Editor</span>
-          <ArrowsMaximize />
+          <ArrowsMaximize onClick={editorMaximizer}/>
         </div>
-        <textarea name="editor" id="editor" cols="30" rows="10" onChange={UpdateMarkdown}></textarea>
+        <textarea name="editor" id="editor" cols="30" rows="10" onChange={UpdateMarkdown}  ></textarea>
       </div>
-      <div className="preview-wrapper wrapper">
+      { visible && <div className="preview-wrapper wrapper" > 
         <div className="preview-toolbar toolbar">
           <span>Previewer</span>
           <ArrowsDiagonalMinimize2 />
         </div>
         <div id="preview" dangerouslySetInnerHTML={{__html:mark}}>
         </div>
-      </div>
+      </div> }
 
     </div>
   );
