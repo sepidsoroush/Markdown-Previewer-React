@@ -18,10 +18,12 @@ function App() {
   const [width , setWidth] = useState("45vw");
   let newWidth = (visible ? "90vw" : "45vw");
 
+
   function editorMaximizer(){
     // setWidth("90vh");
     setVisible(!visible);
     setWidth(newWidth);
+    
   }
 
   return (
@@ -29,7 +31,7 @@ function App() {
       <div className="editor-wrapper wrapper" style={{width : width}}>
         <div className="editor-toolbar toolbar">
           <span>Editor</span>
-          <ArrowsMaximize onClick={editorMaximizer}/>
+          <button onClick={editorMaximizer}> {visible ? <ArrowsMaximize/> : <ArrowsDiagonalMinimize2/> } </button>
         </div>
         <textarea name="editor" id="editor" cols="30" rows="10" onChange={UpdateMarkdown}  ></textarea>
       </div>
